@@ -35,7 +35,15 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Lottie.asset("assets/1.json")],
+          children: [
+            Center(
+              child: Lottie.asset("assets/1.json"),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            ElevatedButton(onPressed: () {}, child: Text("Get Start"))
+          ],
         ),
       ),
     );
