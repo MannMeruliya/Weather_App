@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       routes: {
-        '/':(context) => MyHomePage(),
-      'homescreen' :(context) => homescreen()
+        '/': (context) => MyHomePage(),
+        'homescreen': (context) => homescreen()
       },
     );
   }
@@ -35,13 +35,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xff999ff8),
       body: Stack(
         alignment: Alignment(0, 0.3),
         children: [
-          Container(
-            height: double.infinity,
-            color: Color(0xff999ff8),
-          ),
           Container(
             alignment: Alignment(0, 0.2),
             child: Text(
@@ -70,10 +67,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Container(
               alignment: Alignment(0, 0.5),
-              child:
-                  ElevatedButton(onPressed: () {
+              child: ElevatedButton(
+                  onPressed: () {
                     Navigator.of(context).pushNamed('homescreen');
-                  }, child: Text("Get Start"))),
+                  },
+                  child: Text("Get Start"))),
         ],
       ),
     );
