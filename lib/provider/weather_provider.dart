@@ -5,16 +5,16 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:skyscrapper/model/weathermodel.dart';
 import 'package:http/http.dart' as http;
 
-class WeatherProvider extends ChangeNotifier{
+class WeatherProvider extends ChangeNotifier {
   bool isLoading = false;
   List<Forecast> foreList = [];
   late Model model;
   late String place;
   List days = [];
-  bool isSearch= false;
+  bool isSearch = false;
   String city = "surat";
 
-  gotoSearch(){
+  gotoSearch() {
     isSearch = !isSearch;
     notifyListeners();
   }
@@ -33,16 +33,16 @@ class WeatherProvider extends ChangeNotifier{
       },
     );
     print("Status code :: ${response.statusCode}");
-    if(response.statusCode == 200) {
+    print("Status code :: ${response.body}");
+    if (response.statusCode == 200) {
       model = Model.fromJson(json.decode(response.body));
-   foreList.addAll(model.forecasts!);
-   isLoading = false;
-    }else{
+      foreList.addAll(model.forecasts!);
+      isLoading = false;
+    } else {
       Fluttertoast.showToast(
           msg: "somthing is wrong..",
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.BOTTOM
-      );
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.BOTTOM);
       isLoading = false;
     }
   }
