@@ -7,7 +7,7 @@ import 'package:skyscrapper/screen/homescreen.dart';
 void main() {
   runApp(ChangeNotifierProvider(
     create: (context) => WeatherProvider(),
-    child: const MyApp(),
+    child: MyApp(),
   ));
 }
 

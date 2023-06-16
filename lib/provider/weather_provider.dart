@@ -28,7 +28,7 @@ class WeatherProvider extends ChangeNotifier {
     var response = await http.get(
       url,
       headers: {
-        'X-RapidAPI-Key': '139d3957eamsh708f548a13e4809p15793bjsn381242a35547',
+        'X-RapidAPI-Key': 'b49c1d4013mshbbf06d6346d5444p1f1c26jsnff398ea098f5',
         'X-RapidAPI-Host': 'yahoo-weather5.p.rapidapi.com',
       },
     );
@@ -38,6 +38,8 @@ class WeatherProvider extends ChangeNotifier {
       model = Model.fromJson(json.decode(response.body));
       foreList.addAll(model.forecasts!);
       isLoading = false;
+      notifyListeners();
+      print(url);
     } else {
       Fluttertoast.showToast(
           msg: "somthing is wrong..",
@@ -45,5 +47,6 @@ class WeatherProvider extends ChangeNotifier {
           gravity: ToastGravity.BOTTOM);
       isLoading = false;
     }
+    isLoading = false;
   }
 }
