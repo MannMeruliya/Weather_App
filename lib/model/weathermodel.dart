@@ -86,7 +86,7 @@ class Astronomy {
 
 class Atmosphere {
   int? humidity;
-  int? visibility;
+  double? visibility;
   double? pressure;
 
   Atmosphere({
@@ -97,7 +97,7 @@ class Atmosphere {
 
   factory Atmosphere.fromJson(Map<String, dynamic> json) => Atmosphere(
     humidity: json["humidity"],
-    visibility: json["visibility"],
+    visibility: json["visibility"]?.toDouble(),
     pressure: json["pressure"]?.toDouble(),
   );
 

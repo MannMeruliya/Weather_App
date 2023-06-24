@@ -28,7 +28,7 @@ class WeatherProvider extends ChangeNotifier {
     var response = await http.get(
       url,
       headers: {
-        'X-RapidAPI-Key': 'b49c1d4013mshbbf06d6346d5444p1f1c26jsnff398ea098f5',
+        'X-RapidAPI-Key': '02d27ffd96mshb2ae6a4b1ab633dp15963fjsn947368dd0b1d',
         'X-RapidAPI-Host': 'yahoo-weather5.p.rapidapi.com',
       },
     );
